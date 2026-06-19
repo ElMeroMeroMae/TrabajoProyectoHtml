@@ -13,12 +13,15 @@
     <style>
 
         body {
-            background: linear-gradient(135deg, #ebd2bb 0%, #f5f5dc 100%);
+            background: var(--bg-gradient);
             min-height: 100vh;
             background-attachment: fixed;
             font-family: 'Lora', Garamond, serif;
             color: #55443b;
-            padding: 6rem 1rem 3rem 1rem;
+            padding: 3rem 1rem;
+            background: var(--bg-gradient) !important; 
+            color: var(--text-color);
+            transition: all 0.4s ease;
         }
 
         :root {
@@ -28,6 +31,7 @@
             --wrapper-bg: rgba(255, 255, 255, 0.75);
             --border-color: rgba(160, 130, 110, 0.2);
             --accent-color: #a0826e;
+            --card-inner-bg: rgba(255, 255, 255, 0.5);
         }
 
         .vintage-wrapper {
@@ -267,6 +271,7 @@
             color: #a0826e;
             font-size: 0.9rem;
         }
+
         [data-theme="pink"] {
             --bg-gradient: linear-gradient(135deg, #fbc5d8 0%, #ffeef2 100%);
             --text-color: #644b53;
