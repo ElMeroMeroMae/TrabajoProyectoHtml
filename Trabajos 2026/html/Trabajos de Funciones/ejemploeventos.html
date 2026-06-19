@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form id="frmFechas">
+    <input type="month" id="meses">
+    <input type="week" id="semanas">
+    <input type="email" id="correo">
+    <button type="submit">Enviar</button>
+</form>
+<script>
+    const frmFechas = document.getElementById('frmFechas')
+    let correo = document.getElementById('correo')
+    let meses = document.getElementById('meses')
+    let semanas = document.getElementById('semanas')
+    
+    frmFechas.addEventListener('submit', () => {
+        document.writeln('Datos enviados...<br>')
+        document.writeln(correo.value + '<br>')
+        document.writeln(meses.value + '<br>')
+        document.writeln(semanas.value + '<br>')
+    })
+</script>   
+
+</body>
+</html>

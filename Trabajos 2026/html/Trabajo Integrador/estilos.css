@@ -1,0 +1,228 @@
+@font-face {
+    font-family:"Pokemon Solid"; 
+    src: url(Pokemon\ Solid.woff2) format(woff2), url(Pokemon\ Solid.woff) format(woff);
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    background-image: url(https://th.bing.com/th/id/R.9c3b447bc23141425bb3176b5986cde4?rik=DVh7%2bN0c7fupTg&pid=ImgRaw&r=0);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+nav{
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid whitesmoke;
+}
+
+h1.Presentacion{
+    color: rgb(192, 223, 18);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: "Pokemon Solid", sans-serif;
+    letter-spacing: 5px;
+    background-image: url(https://images.wikidexcdn.net/mwuploads/wikidex/a/ac/latest/20240630130036/Super_Ball_beta_GO.png), url(https://images.wikidexcdn.net/mwuploads/wikidex/a/ac/latest/20240630130036/Super_Ball_beta_GO.png), url();
+    background-size: 100px;
+    background-position: left center, right center;
+    background-repeat: no-repeat;
+}
+h2{
+    color: rgb(238, 241, 5);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 20px;
+    border-radius: 10px;
+}
+
+main{
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    flex: 3;
+}
+
+
+
+input[type="email"]:hover {  
+border: 2px solid #40c7cc;  
+} 
+
+a[target="_blank"] {  
+font-weight: bold;  
+text-decoration: none;  
+}
+
+img.PokemonDB {
+    width: 250px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    transition: transform 0.3s ease;
+}
+img.PokemonDB:hover {
+    transform: scale(1.1);
+}
+
+img.Smogon {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    transition: transform 0.3s ease;
+}
+img.Smogon:hover {
+    transform: scale(1.1);
+}
+img.Wikidex {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    transition: transform 0.3s ease;
+}
+img.Wikidex:hover {
+    transform: scale(1.1);
+}
+
+footer{
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+    bottom: 0%;}
+
+ul.Parapieza{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+} 
+.Parapieza a{
+    color: rgb(226, 211, 211);
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.Parapieza a:hover {
+    background-color: rgb(226, 211, 211);
+    color: black;
+}
+
+.carrusel {
+    width: 60%;
+    max-width: 600px; 
+    margin: auto;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.slider {
+    display: flex;
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    scroll-behavior: smooth; 
+    -webkit-overflow-scrolling: touch; 
+}
+
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+.slider img {
+    width: 100%; 
+    flex-shrink: 0; 
+    object-fit: cover;
+    scroll-snap-align: center; 
+}
+
+
+.item-carrusel {
+    position: relative;
+    flex-shrink: 0;
+    width: 100%;
+    scroll-snap-align: center;
+}
+
+.item-carrusel img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+
+.capa-texto {
+    position: absolute;
+    bottom: 20px;   
+    left: 20px;     
+    background: rgba(0, 0, 0, 0.6); 
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-family: sans-serif;
+    max-width: 80%;
+    backdrop-filter: blur(4px);
+}
+
+.capa-texto p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+blockquote.cita::first-letter {  
+font-size: 300%;  
+float: left;  
+color: #c0392b;  
+} 
+
+.cita::before { content: "“"; color: #bdc3c7; } 
+.cita::after { content: "”"; color: #bdc3c7; }
+
+#navbar {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;        
+    
+}
+
+.logo {
+    height: 50px;               
+    width: auto;                
+    display: block;
+}
+
+#nombrecreador {
+    top: 10px;
+    left: 10px;
+    color: rgb(9, 2, 39);
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#nombrecreador:hover {
+    color: #f1c40f;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}

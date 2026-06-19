@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const menu =()=>document.write("Opción 1 <br> Opción 2 <br> Opción 3 <br> Opción 4 <br> Opción 5 <br> Opción 6 <br> Opción 7");
+        console.log(menu());
+
+        const cuadrado= x =>x*x;
+        console.log(cuadrado(5)); 
+
+        const potencia= (x,y) =>Math.pow(x,y);
+        console.log(potencia(2,3));
+
+        let numeros = [1, 2, 3, 4, 5];
+        let dobles =numeros.map(num => num * 2);
+
+        let doblesTradicional =numeros.map(function(num){
+            return num * 2;
+        });
+
+        
+    </script>
+</body>
+</html>

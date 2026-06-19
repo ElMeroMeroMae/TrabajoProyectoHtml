@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Verificar si un número es par o impar</h2>
+    <input type="number" id="numero" placeholder="Ingrese un número">
+    <button onclick="Espar()">Verificar</button>
+    <p id="resultado"></p>
+    <script>
+        function Espar() {
+            const numero = document.getElementById("numero").value;
+            const resultado = document.getElementById("resultado");
+
+            if (numero % 2 === 0) {
+                resultado.innerHTML = " <img src='https://images.twinkl.co.uk/tw1n/image/private/t_630/u/ux/cuadrdado_ver_1.png' alt='Par'> El número es par.";
+            } else {
+                resultado.innerHTML = " <img src='https://pngimg.com/uploads/triangle/triangle_PNG55.png' alt='Impar'> El número es impar.";
+            }
+        }
+    </script>
+</body>
+</html>

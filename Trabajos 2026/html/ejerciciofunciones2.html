@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Ingrese una imagen</h2>
+    <input type="string" id="img" placeholder="Ingrese el link">
+    <button onclick="mostrar()">Mostrar</button>
+    <p id="resultado"></p>
+    <script>
+        function mostrar() {
+            const imgLink = document.getElementById("img").value;
+            document.getElementById("resultado").innerHTML = `<img src="${imgLink}" alt="Imagen">`;
+        }
+    </script>
+</body>
+</html>

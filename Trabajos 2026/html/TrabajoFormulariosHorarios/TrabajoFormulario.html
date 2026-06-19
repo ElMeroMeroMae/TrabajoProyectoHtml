@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario de Clase</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', sans-serif; background-color: #f0f4f8; padding: 20px;
+        }
+        form.formulario{
+            max-width: 600px; 
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        button{
+            background-color: #007BFF; 
+            color: white; 
+            border: none; 
+            padding: 10px 20px; 
+            border-radius: 4px; 
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form class="formulario" action="/html/registro.html" method="post" enctype="multipart/form-data">
+        <label for="carnet">Carnet:</label>
+        <input type="text" id="carnet" name="carnet" required>
+        <br><br>
+        <label for="nombre">Nombres y Apellidos:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br><br>
+        <label for="carrera">Carrera:</label>
+        <select name="carreras" id="carreras">
+            <option value="">Seleccione una carrera</option>
+            <option value="Ingeniería en Sistemas">Ingeniería en Sistemas</option>
+            <option value="Ingeniería Civil">Ingeniería Civil</option>
+            <option value="Ingeniería Industrial">Ingeniería Industrial</option>
+            <option value="Arquitectura">Arquitectura</option>
+            <option value="Diseño Gráfico">Diseño Gráfico</option>
+            <option value="Ingeniería en Alimentos">Ingeniería en Alimentos</option>
+            <option value="Ingeniería Agronoma">Ingeniería Agronoma</option>
+            <option value="Leyes">Leyes</option>
+            <option value="Mercadotecnia">Mercadotecnia</option>
+        </select>
+        <br><br>
+        <label for="dias_clase">Días de Clase:</label>
+        <input type="checkbox" id="lunes" name="dias_clase" value="Lunes">
+        <label for="lunes">Lunes</label>
+        <input type="checkbox" id="martes" name="dias_clase" value="Martes">
+        <label for="martes">Martes</label>
+        <input type="checkbox" id="miercoles" name="dias_clase" value="Miércoles">
+        <label for="miercoles">Miércoles</label>
+        <input type="checkbox" id="jueves" name="dias_clase" value="Jueves">
+        <label for="jueves">Jueves</label>
+        <input type="checkbox" id="viernes" name="dias_clase" value="Viernes">
+        <label for="viernes">Viernes</label>
+        <br><br>
+        <label for="hora">Hora</label>
+        <input type="time" id="hora" name="hora" required>
+        <br><br>
+        <label for="foto">Foto:</label>
+        <input type="file" id="foto" name="foto" accept="image/*">
+        <br><br>
+        <button type="submit">Registrar</button>
+        
+    </form>
+</body>
+</html>

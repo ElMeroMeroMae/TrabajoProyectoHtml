@@ -1,0 +1,51 @@
+* { margin: 0; box-sizing: border-box; font-family: sans
+serif;  } 
+h1 { color: #000000; text-align: center; } 
+.nota { background-color: #f1160f; padding: 10px; } 
+
+#btn-envio { background: #3498db; color: white; border: none; size: 100px; padding: 10px 20px; 
+    border-radius: 5px; cursor: pointer; }
+#btn-envio:hover { background: #2980b9; }
+ 
+
+h1.autor{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+}
+body{
+    background-image: url("https://th.bing.com/th/id/R.9d4e37e9e7df2c2978ee6702bce1f3cd?rik=v4MZvBwzAOFJpg&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fxLZrFev.png&ehk=VR8MrXXVVeLHAyllxPpuFqyq4e6mAa1%2bZdE2kqXUQx0%3d&risl=&pid=ImgRaw&r=0");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.logo {
+    height: 50px;               
+    width: auto;                
+    display: block;
+}
+
+#nombrecreador {
+    top: 10px;
+    left: 10px;
+    color: rgb(9, 2, 39);
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#nombrecreador:hover {
+    color: #f1c40f;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+nav {
+    margin-top: 20px;
+    text-align: center;
+    border: #bdc3c7 1px solid;
+}
+a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <fieldset style="background-color: #f0f4f8; border: 2px solid #bcccdc; border-radius: 8px; padding: 15px;">
+        <legend style="font-weight: bold; color: #334e68; padding: 0 10px;">Control de Luz</legend>
+        <div id="caja" style="width: 100px; height: 100px; background: rgb(0, 0, 0); border-radius: 4px;"></div>
+        <br>
+        <button onclick="alternarLuz()">Alternar Luz</button>
+    </fieldset>
+
+    <br> <fieldset style="background-color: #e6f4ea; border: 2px solid #a3cfbb; border-radius: 8px; padding: 15px;">
+        <legend style="font-weight: bold; color: #146c43; padding: 0 10px;">Contador de Clics</legend>
+        <p style="font-size: 18px; margin-top: 0;">Clics: <span id="contador" style="font-weight: bold;">0</span></p>
+        <button id="btnContar">Incrementar</button> 
+        <button id="btnResetear">Resetear</button>
+    </fieldset>
+
+<script>
+
+    function alternarLuz() {
+        const caja = document.getElementById('caja');
+        if (caja.style.background === 'black' || caja.style.background === 'rgb(0, 0, 0)') {
+            caja.style.background = 'yellow';
+        } else {
+            caja.style.background = 'black';
+        }
+    }
+
+    const boton = document.querySelector("#btnContar");
+    const resetear = document.querySelector("#btnResetear");
+    const contador = document.querySelector("#contador");
+    let conteo = 0;
+
+    boton.onclick = function() {
+        conteo++;
+        contador.textContent = conteo;
+    }
+    
+    resetear.onclick = function() {
+        conteo = 0;
+        contador.textContent = conteo;
+    }
+</script>
+</body>
+</html>

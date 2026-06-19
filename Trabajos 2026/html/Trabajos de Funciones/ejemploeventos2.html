@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button style="width: 200px;" id="saludar">Saludar</button>
+    <script>
+        const boton = document.querySelector("#saludar");
+        boton.onclick= function(){ 
+            if (boton.textContent === "Hola Mundo") {
+                boton.textContent = "Saludar";
+                boton.style.backgroundColor = "lightgray";
+            } else {
+                boton.textContent = "Hola Mundo";
+                boton.style.backgroundColor = "red";
+            }
+        } 
+    </script>
+</body>
+</html>

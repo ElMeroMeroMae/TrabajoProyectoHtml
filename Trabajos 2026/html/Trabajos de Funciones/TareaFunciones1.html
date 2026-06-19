@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function contarVocales(texto) {
+    const vocalesEncontradas = texto.match(/[aeiouáéíóú]/gi);
+    return vocalesEncontradas ? vocalesEncontradas.length : 0;
+    }
+
+    console.log(contarVocales("Hola")); 
+
+    // 2
+
+    function filtrarPares(numeros) {
+    return numeros.filter(num => num % 2 === 0);
+    }
+    const listaNumeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    console.log(filtrarPares(listaNumeros)); 
+
+    // 3
+
+    function nombresAMayusculas(nombres) {
+    return nombres.map(nombre => nombre.toUpperCase());
+    }
+
+    const amigos = ["ana", "luis", "carlos"];
+    console.log(nombresAMayusculas(amigos)); 
+
+    //4
+
+    function calculadora(num1, num2, operacion) {
+    switch(operacion) {
+        case '+': return num1 + num2;
+        case '-': return num1 - num2;
+        case '*': return num1 * num2;
+        case '/': 
+            if (num2 === 0) return "¡Error! No podés dividir entre cero, prix.";
+            return num1 / num2;
+        default: return "Operación no válida.";
+        }
+    }
+
+    console.log(calculadora(10, 5, '*')); 
+    console.log(calculadora(8, 0, '/')); 
+
+    //5 
+
+    function gestionarPersonas() {
+    let personas = [];
+    let continuar = true;
+
+    while (continuar) {
+        let nombre = prompt("Ingresa el nombre de la persona (o escribe 'Salir' para terminar):");
+        
+        if (nombre.toLowerCase() === 'salir') {
+            continuar = false;
+            break;
+        }
+
+        let edad = parseInt(prompt(`Ingresa la edad de ${nombre}:`));
+
+        personas.push({ nombre: nombre, edad: edad });
+
+        let respuesta = prompt("¿Querés agregar a otra persona? (Si / No)");
+        if (respuesta.toLowerCase() === 'no') {
+            continuar = false;
+        }
+    }
+    personas.sort((a, b) => a.edad - b.edad);
+
+    console.log("-Lista de Personas Creada (Ordenada por Edad)-");
+    console.table(personas); 
+    }
+
+
+    </script>
+</body>
+</html>

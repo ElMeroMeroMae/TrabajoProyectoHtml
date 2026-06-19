@@ -1,0 +1,54 @@
+/* Descendiente: cualquier 'p' dentro de '.contenedor' */ 
+.contenedor p { line-height: 1.6; border: 1px solid #000000; color: rgb(0, 0, 0);
+background-color: rgba(0, 0, 0, 0.5); 
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    flex: 3;
+} 
+/* Hijo directo: solo el 'p' que es hijo inmediato */ 
+.contenedor > p { font-size: 1.2rem; color: #ffffff; border: 1px solid #000000; padding: 10px; border-radius: 5px; }
+h1.autor{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+}
+.logo {
+    height: 50px;               
+    width: auto;                
+    display: block;
+}
+
+#nombrecreador {
+    top: 10px;
+    left: 10px;
+    color: rgb(9, 2, 39);
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#nombrecreador:hover {
+    color: #f1c40f;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+nav {
+    margin-top: 20px;
+    text-align: center;
+    border: #bdc3c7 1px solid;
+}
+a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+}
+body{
+    background-image: url("https://th.bing.com/th/id/R.9d4e37e9e7df2c2978ee6702bce1f3cd?rik=v4MZvBwzAOFJpg&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fxLZrFev.png&ehk=VR8MrXXVVeLHAyllxPpuFqyq4e6mAa1%2bZdE2kqXUQx0%3d&risl=&pid=ImgRaw&r=0");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}

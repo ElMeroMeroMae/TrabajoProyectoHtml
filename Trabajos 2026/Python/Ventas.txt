@@ -1,0 +1,6 @@
+
+Camisa,5
+Pantalón,3
+Zapatos,2
+Camisa,4
+Zapatos,1

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Eventos</h1>
+
+    <audio id="audio" onplay="playAudio()" onpause="enPausa()"
+    src="./The_Animals_TheHouseOfTheRisingSun.mp3" controls>
+    </audio>
+
+    <input style="width: 300px;" type="label" id="lblaudio" value="" readonly>
+
+    <script>
+      function playAudio(){
+       document.getElementById("lblaudio").value = "The Animals -      The House Of The Rising Sun";}
+      function enPausa(){
+      document.getElementById("lblaudio").value = "En Pausa...";}
+    </script>
+</body>
+</html>
