@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Vintage - Nuestro Catálogo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="icon" href="https://media.discordapp.net/attachments/667862037988376577/1517309032015335596/b9aa205f-93cc-458b-b3b1-5ded1d5cac43.png?ex=6a35cfa7&is=6a347e27&hm=954e737c76ba66632b2a249a31f8b800621dff5c0f9b1334116ccd8933cb4831&=&format=webp&quality=lossless&width=648&height=648" type="image/png">   
+    <style>
+
+        body {
+            background: linear-gradient(135deg, #ebd2bb 0%, #f5f5dc 100%);
+            min-height: 100vh;
+            background-attachment: fixed;
+            font-family: 'Lora', Garamond, serif;
+            color: #55443b;
+            padding: 6rem 1rem 3rem 1rem;
+        }
+
+        :root {
+            --bg-gradient: linear-gradient(135deg, #ebd2bb 0%, #f5f5dc 100%);
+            --text-color: #55443b;
+            --title-color: #3d2f26;
+            --wrapper-bg: rgba(255, 255, 255, 0.75);
+            --border-color: rgba(160, 130, 110, 0.2);
+            --accent-color: #a0826e;
+        }
+
+        .vintage-wrapper {
+            max-width: 750px;
+            margin: 0 auto;
+            background-color: var(--wrapper-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(74, 59, 50, 0.1);
+            padding: 3rem 2.5rem;
+            backdrop-filter: blur(5px);
+            background-color: var(--wrapper-bg) !important;
+            border-color: var(--border-color) !important;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            color: #3d2f26;
+            letter-spacing: 0.5px;
+            color: var(--title-color) !important;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        .vintage-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .vintage-subtitle {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            color: #a0826e;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .vintage-divider {
+            font-size: 1.3rem;
+            color: #a0826e;
+            margin-top: 0.6rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .vintage-divider::before,
+        .vintage-divider::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 60px;
+            height: 1px;
+            background-color: rgba(160, 130, 110, 0.4);
+        }
+        .vintage-divider::before { right: 140%; }
+        .vintage-divider::after { left: 140%; }
+
+        .nav-tabs-vintage {
+            border-bottom: 2px solid rgba(160, 130, 110, 0.2) !important;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+            gap: 0.5rem;
+        }
+
+        .nav-tabs-vintage .nav-link {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #7a6354 !important;
+            background: transparent !important;
+            border: none !important;
+            padding: 0.6rem 1.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-tabs-vintage .nav-link:hover {
+            color: #3d2f26 !important;
+        }
+
+        .nav-tabs-vintage .nav-link.active {
+            color: #3d2f26 !important;
+        }
+
+        .nav-tabs-vintage .nav-link.active::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #a0826e;
+            border-radius: 2px;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px dashed rgba(160, 130, 110, 0.3);
+            border-radius: 12px;
+            padding: 1.2rem;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            background: rgba(245, 240, 235, 0.8);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(74, 59, 50, 0.05);
+            border-style: solid;
+        }
+
+        .product-card-flex {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .product-img-wrapper {
+            width: 100%;
+            height: 170px;
+            overflow: hidden;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .product-img-clean {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-img-clean {
+            transform: scale(1.06);
+        }
+
+        .product-info-wrapper {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        @media (min-width: 768px) {
+            .product-card-flex {
+                flex-direction: row;
+                align-items: center;
+            }
+            .product-img-wrapper {
+                width: 130px;
+                height: 130px;
+            }
+        }
+
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.4rem;
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0;
+            padding-right: 0.5rem;
+        }
+
+        .product-price {
+            font-family: 'Lora', serif;
+            font-weight: 700;
+            color: #a0826e;
+            font-size: 1.15rem;
+            white-space: nowrap;
+        }
+
+        .product-description {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #6e5c51;
+            margin: 0;
+            text-align: left;
+        }
+
+        .navbar {
+            background-color: rgba(245, 240, 235, 0.8) !important;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            z-index: 1030 !important;
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif !important;
+            font-size: 1.5rem !important;
+            font-weight: 800 !important;
+            color: #4a3b32 !important;
+        }
+
+        .nav-link-bar {
+            font-family: 'Lora', serif !important;
+            font-size: 1.1rem !important;
+            color: #4a3b32 !important;
+        }
+
+        .button-conexion-index {
+            background-color: rgba(245, 240, 235, 0.8) !important;
+            border: 1px solid rgba(160, 130, 110, 0.2) !important;
+            color: #4a3b32 !important;
+            font-family: 'Playfair Display', serif !important;
+            font-size: 1.1rem !important;
+            padding: 0.5rem 1.2rem !important;
+            border-radius: 8px !important;
+            transition: all 0.3s ease;
+        }
+        
+        .button-conexion-index:hover {
+            background-color: #ebd2bb !important;
+            color: #3d2f26 !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem 1rem 1rem 1rem;
+            font-family: 'Lora', serif;
+            color: #a0826e;
+            font-size: 0.9rem;
+        }
+        [data-theme="pink"] {
+            --bg-gradient: linear-gradient(135deg, #fbc5d8 0%, #ffeef2 100%);
+            --text-color: #644b53;
+            --title-color: #4a2834;
+            --wrapper-bg: rgba(255, 255, 255, 0.8);
+            --border-color: rgba(224, 156, 178, 0.3);
+            --accent-color: #d4889f;
+            --card-inner-bg: rgba(255, 255, 255, 0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbarinicio" class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="Index.html">Café Vintage</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="Index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="seccionCatalogo.html">Catálogo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="seccionSN.html">Sobre Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="seccionConfiguracion.html">Configuracion</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search"/>
+            <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+        <div class="vintage-wrapper">
+            
+            <div class="vintage-header">
+                <span class="vintage-subtitle">Selección Especial</span>
+                <h1>Nuestro Menú</h1>
+                <div class="vintage-divider">📜</div>
+            </div>
+
+            <ul class="nav nav-tabs nav-tabs-vintage" id="menuTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="cafes-tab" data-bs-toggle="tab" data-bs-target="#cafes" type="button" role="tab" aria-controls="cafes" aria-selected="true">Cafés</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pasteles-tab" data-bs-toggle="tab" data-bs-target="#pasteles" type="button" role="tab" aria-controls="pasteles" aria-selected="false">Pasteles</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="panes-tab" data-bs-toggle="tab" data-bs-target="#panes" type="button" role="tab" aria-controls="panes" aria-selected="false">Panes</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="desayunos-tab" data-bs-toggle="tab" data-bs-target="#desayunos" type="button" role="tab" aria-controls="desayunos" aria-selected="false">Desayunos</button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="menuTabsContent">
+                
+                <div class="tab-pane fade show active" id="cafes" role="tabpanel" aria-labelledby="cafes-tab">
+                    <div class="row g-4">
+                        
+                        <div class="col-md-6">
+                            <div class="product-card product-card-flex">
+                                <div class="product-img-wrapper">
+                                    <img src="https://www.lavanguardia.com/uploads/2022/07/08/62c8187d97c5c.jpeg" class="product-img-clean" alt="Espresso">
+                                </div>
+                                <div class="product-info-wrapper">
+                                    <div class="product-header">
+                                        <h3 class="product-title">Espresso Tradicional</h3>
+                                        <span class="product-price">C$ 45.00</span>
+                                    </div>
+                                    <p class="product-description">Una onza de café hecha a presión</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="product-card product-card-flex">
+                                <div class="product-img-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?w=400" class="product-img-clean" alt="Capuccino">
+                                </div>
+                                <div class="product-info-wrapper">
+                                <a href="PaginaDedicada.html" class="btn-vintage mt-3">  
+                                    <div class="product-header">
+                                        <h3 class="product-title">Capuccino Artesanal</h3>
+                                        <span class="product-price">C$ 75.00</span>
+                                    </div>
+                                    <p class="product-description">Equilibrio perfecto entre espresso y leche al vapor </p>
+                                </a>  
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="pasteles" role="tabpanel" aria-labelledby="pasteles-tab">
+                    <div class="row g-4">
+                        
+                        <div class="col-md-6">
+                            <div class="product-card product-card-flex">
+                                <div class="product-img-wrapper">
+                                    <img src="https://i.pinimg.com/originals/6b/9a/c3/6b9ac328ac7597254ad62ae7f2972cc8.jpg" class="product-img-clean" alt="Tarta Zanahoria">
+                                </div>
+                                <div class="product-info-wrapper">
+                                    <div class="product-header">
+                                        <h3 class="product-title">Tarta de Zanahoria</h3>
+                                        <span class="product-price">C$ 90.00</span>
+                                    </div>
+                                    <p class="product-description">Esponjoso bizcocho especiado con nueces y cubierto de queso crema sedoso.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="product-card product-card-flex">
+                                <div class="product-img-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=400" class="product-img-clean" alt="Cheesecake">
+                                </div>
+                                <div class="product-info-wrapper">
+                                    <div class="product-header">
+                                        <h3 class="product-title">Cheesecake de Frutos Rojos</h3>
+                                        <span class="product-price">C$ 95.00</span>
+                                    </div>
+                                    <p class="product-description">Base de galleta crujiente, crema horneada suave y cobertura de mermelada artesanal.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="panes" role="tabpanel" aria-labelledby="panes-tab">
+                    <div class="row g-4">
+                        
+                        <div class="col-md-6">
+                            <div class="product-card product-card-flex">
+                                <div class="product-img-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400" class="product-img-clean" alt="Croissant">
+                                </div>
+                                <div class="product-info-wrapper">
+                                    <div class="product-header">
+                                        <h3 class="product-title">Croissant de Mantequilla</h3>
+                                        <span class="product-price">C$ 50.00</span>
+                                    </div>
+                                    <p class="product-description">Hojaldre clásico francés, crujiente por fuera y aireado por dentro, horneado cada mañana.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="desayunos" role="tabpanel" aria-labelledby="desayunos-tab">
+                    <div class="row g-4">
+                        
+                        <div class="col-md-6">
+                            <div class="product-card product-card-flex">
+                                <div class="product-img-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=400" class="product-img-clean" alt="Tostada">
+                                </div>
+                                <div class="product-info-wrapper">
+                                    <div class="product-header">
+                                        <h3 class="product-title">Tostada de Aguacate</h3>
+                                        <span class="product-price">C$ 120.00</span>
+                                    </div>
+                                    <p class="product-description">Rebanada de masa madre tostada, aguacate sazonado, huevo ponchado y hojuelas de chile.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div> </div>
+    </div>
+
+    <div class="text-center my-4">
+        <button class="button-conexion-index">Regresar al Inicio</button>
+    </div>
+
+    <footer class="footer">
+        Carlos David Pravia Herrera, Miguel Angel Castillo Garcia @2026
+    </footer>
+    <script>
+        if (localStorage.getItem('selected-theme') === 'pink') {
+            document.documentElement.setAttribute('data-theme', 'pink');
+        }
+    </script>
+</body>
+</html>

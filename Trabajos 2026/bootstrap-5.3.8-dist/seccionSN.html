@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Vintage - Sobre Nosotros</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+    </style>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <link rel="icon" href="https://media.discordapp.net/attachments/667862037988376577/1517309032015335596/b9aa205f-93cc-458b-b3b1-5ded1d5cac43.png?ex=6a35cfa7&is=6a347e27&hm=954e737c76ba66632b2a249a31f8b800621dff5c0f9b1334116ccd8933cb4831&=&format=webp&quality=lossless&width=648&height=648" type="image/png">   
+    <style>
+        
+        :root {
+            --bg-gradient: linear-gradient(135deg, #ebd2bb 0%, #f5f5dc 100%);
+            --text-color: #55443b;
+            --title-color: #3d2f26;
+            --wrapper-bg: rgba(255, 255, 255, 0.75);
+            --border-color: rgba(160, 130, 110, 0.2);
+            --accent-color: #a0826e;
+        }
+        body {
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            background-attachment: fixed;
+            font-family: 'Lora', Garamond, serif;
+            color: #55443b;
+            padding: 3rem 1rem;
+            background: var(--bg-gradient) !important; 
+            color: var(--text-color);
+            transition: all 0.4s ease;
+        }
+
+        .vintage-wrapper {
+            max-width: 750px;
+            margin: 0 auto;
+            background-color: var(--wrapper-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(74, 59, 50, 0.1);
+            padding: 3rem 2.5rem;
+            backdrop-filter: blur(5px);
+            background-color: var(--wrapper-bg) !important;
+            border-color: var(--border-color) !important;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            color: #3d2f26;
+            letter-spacing: 0.5px;
+            color: var(--title-color) !important;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1.2rem;
+            color: #4a3b32;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .vintage-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .vintage-subtitle {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            color: #a0826e;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .vintage-divider {
+            font-size: 1.3rem;
+            color: #a0826e;
+            margin-top: 0.6rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .vintage-divider::before,
+        .vintage-divider::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 60px;
+            height: 1px;
+            background-color: rgba(160, 130, 110, 0.4);
+        }
+        .vintage-divider::before { right: 140%; }
+        .vintage-divider::after { left: 140%; }
+
+        .lead-paragraph {
+            font-size: 1.15rem;
+            color: #44352a;
+            line-height: 1.8;
+        }
+        
+        .lead-paragraph::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            float: left;
+            margin-right: 0.6rem;
+            line-height: 0.8;
+            color: #a0826e;
+            margin-top: 0.2rem;
+        }
+
+        .accordion {
+            margin-top: 3rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        .accordion-item {
+            background-color: rgba(255, 255, 255, 0.6) !important;
+            border: 1px solid rgba(160, 130, 110, 0.2) !important;
+        }
+
+        .accordion-button {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-size: 1.2rem !important;
+            font-weight: 600 !important;
+            color: #4a3b32 !important;
+            background-color: rgba(245, 240, 235, 0.8) !important;
+            padding: 1.2rem 1.5rem !important;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #ebd2bb !important;
+            color: #3d2f26 !important;
+            box-shadow: none !important;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none !important;
+            border-color: rgba(160, 130, 110, 0.4) !important;
+        }
+
+        .accordion-button::after {
+            filter: sepia(50%) hue-rotate(340deg) brightness(60%) contrast(100%);
+        }
+
+        .accordion-body {
+            font-family: 'Lora', Garamond, serif !important;
+            font-size: 1rem !important;
+            line-height: 1.7 !important;
+            color: #55443b !important;
+            background-color: rgba(255, 255, 255, 0.5) !important;
+            padding: 1.5rem !important;
+        }
+        
+        .accordion-body strong {
+            color: #3d2f26;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+        }
+
+        .navbar {
+            background-color: rgba(245, 240, 235, 0.8) !important;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif !important;
+            font-size: 1.5rem !important;
+            font-weight: 800 !important;
+            color: #4a3b32 !important;
+        }
+
+        .nav-link {
+            font-family: 'Lora', serif !important;
+            font-size: 1.1rem !important;
+            color: #4a3b32 !important;
+        }
+
+        .navbar {
+            background-color: rgba(245, 240, 235, 0.8) !important;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+            
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            z-index: 1030 !important; 
+        }
+
+        .button-conexion-index {
+            background-color: rgba(245, 240, 235, 0.8) !important;
+            border: 1px solid rgba(160, 130, 110, 0.2) !important;
+            color: #4a3b32 !important;
+            font-family: 'Playfair Display', serif !important;
+            font-size: 1.1rem !important;
+            padding: 0.5rem 1.2rem !important;
+            border-radius: 8px !important;
+            transition: all 0.3s ease;
+        }
+        .button-conexion-index:hover {
+            background-color: #ebd2bb !important;
+            color: #3d2f26 !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+        }
+        .footer {
+            text-align: center;
+            padding: 1rem;
+            font-family: 'Lora', serif;
+            color: #a0826e;
+            font-size: 0.9rem;
+        }
+
+        .footer:hover {
+            color: #3d2f26;
+            font-weight: 600;
+        }
+
+        [data-theme="pink"] {
+            --bg-gradient: linear-gradient(135deg, #fbc5d8 0%, #ffeef2 100%);
+            --text-color: #644b53;
+            --title-color: #4a2834;
+            --wrapper-bg: rgba(255, 255, 255, 0.8);
+            --border-color: rgba(224, 156, 178, 0.3);
+            --accent-color: #d4889f;
+        }
+    </style>
+</head>
+<body>
+<body>
+    <script>
+        if (localStorage.getItem('selected-theme') === 'pink') {
+            document.documentElement.setAttribute('data-theme', 'pink');
+        }
+    </script> 
+
+    <nav id="navbarinicio" class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="Index.html">Café Vintage</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="Index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="seccionCatalogo.html">Catálogo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="seccionSN.html">Sobre Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="seccionConfiguracion.html">Configuracion</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search"/>
+            <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+<div class="container">
+    <div class="vintage-wrapper">
+        
+        <div class="vintage-header">
+            <span class="vintage-subtitle">Nuestra Historia</span>
+            <h1>Sobre Nosotros</h1>
+            <div class="vintage-divider">☕</div>
+        </div>
+        
+        <p class="lead-paragraph">
+            En los rincones de nuestro espacio, el tiempo parece detenerse entre el aroma a grano recién tostado y el murmullo de buenas conversaciones. Nacimos con la promesa de revivir la tradición del café bien hecho, seleccionando minuciosamente cada lote para ofrecerte una experiencia nostálgica en cada taza.
+        </p>
+        
+        <h2>El Arte de la Tradición</h2>
+        <p>
+            Desde nuestros inicios, nos hemos dedicado a crear un refugio para los amantes del buen café. No solo servimos bebidas; preservamos métodos artesanales y apoyamos a productores locales para garantizar que la esencia de la vieja escuela permanezca intacta en la industria moderna.
+        </p>
+
+        <div class="accordion" id="vintageAccordion">
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Nuestra Misión Diaria
+                    </button>
+                </h3>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#vintageAccordion">
+                    <div class="accordion-body">
+                        <strong>Un compromiso con tu paladar.</strong> Buscamos transformar la rutina matutina en un ritual de desconexión y disfrute. Nos esforzamos por mantener los estándares más altos de comercio justo, asegurando que cada taza que disfrutas apoye directamente el bienestar de las familias caficultoras que hacen esto posible.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        El Secreto de Nuestro Tueste
+                    </button>
+                </h3>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#vintageAccordion">
+                    <div class="accordion-body">
+                        <strong>Tueste lento y artesanal.</strong> No aceleramos los procesos. Cada variedad de grano recibe un perfil de tueste a la medida en nuestra tostadora clásica, permitiendo que los aceites esenciales y los azúcares naturales del café afloren suavemente. El resultado es un balance perfecto entre acidez, cuerpo y dulzura.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Horarios y Encuentros
+                    </button>
+                </h3>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#vintageAccordion">
+                    <div class="accordion-body">
+                        <strong>Las puertas están abiertas.</strong> Te esperamos de lunes a sábado desde las 7:00 AM hasta las 9:00 PM. Los domingos abrimos un poco más tarde, a las 9:00 AM, ideales para un brunch pausado acompañado de buena música jazz de fondo y lecturas pendientes.
+                    </div>
+                </div>
+            </div>
+        </div> </div>
+</div>
+
+<div class="text-center my-4">
+    <button class="button-conexion-index" onclick="window.history.back()">Regresar</button>
+</div>
+<footer class="footer">
+    Carlos David Pravia Herrera, Miguel Angel Castillo Garcia @2026
+</footer>
+</body>
+</html>
